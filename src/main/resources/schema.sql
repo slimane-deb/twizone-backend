@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS authorities;
-DROP TABLE IF EXISTS customers;
+DROP TABLE IF EXISTS profiles;
 DROP TABLE IF EXISTS professions;
 DROP TABLE IF EXISTS visitors;
 DROP TABLE IF EXISTS users;
@@ -24,10 +24,10 @@ CREATE TABLE visitors (
 CREATE TABLE professions (
     id SERIAL PRIMARY KEY,
     name_en TEXT,
-    name_hu TEXT
+    name_ar TEXT
 );
 
-CREATE TABLE customers (
+CREATE TABLE profiles (
     id SERIAL PRIMARY KEY,
     user_id INTEGER NOT NULL,
     email TEXT NOT NULL UNIQUE,

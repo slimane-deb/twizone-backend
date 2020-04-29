@@ -8,11 +8,11 @@ INSERT INTO visitors (user_id, email) VALUES
     (1, 'a@b.com'),
     (2, 'b@c.com');
 
-INSERT INTO professions (name_en, name_hu) VALUES
-    ('Information technology', 'Informatika'),
-    ('Sales', 'Kereskedelem');
+INSERT INTO professions (name_en, name_ar) VALUES
+    ('Information technology', 'اعلام ألي'),
+    ('Sales', 'بائع');
 
-INSERT INTO customers (user_id, email, first_name, last_name, phone_number, profession_id, position) VALUES
+INSERT INTO profiles (user_id, email, first_name, last_name, phone_number, profession_id, position) VALUES
     (3, 'c@d.com', 'John', 'Doe', '06201231233', 1, '{ "latitude": 36.498, "longitude": 3.03, "timestamp": "" }'),
     (4, 'd@e.com', 'Jane', 'Doe', '0620654968', 2, '{ "latitude": 36.493, "longitude": 3.088, "timestamp": "" }');
 

@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.own</groupId>
-	<artifactId>expert-finder</artifactId>
+	<artifactId>twizone</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>expert-finder</name>
+	<name>twizone</name>
 	<description>Backend for Expert finder project</description>
 
 	<properties>
