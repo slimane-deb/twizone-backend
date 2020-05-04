@@ -2,7 +2,9 @@ package com.shellgui.twizone.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.shellgui.twizone.dto.ProfessionDTO;
 import com.shellgui.twizone.interfaces.RegisteredUser;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -11,6 +13,7 @@ import java.util.Date;
 @Entity
 @Table(name = "profiles", schema = "public")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@Data
 public class Profile extends AbstractModel implements Serializable, RegisteredUser {
     private String email;
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -36,95 +39,9 @@ public class Profile extends AbstractModel implements Serializable, RegisteredUs
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Date registrationDate;
 
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public Integer getProfessionId() {
-        return professionId;
-    }
-
-    public void setProfessionId(Integer professionId) {
-        this.professionId = professionId;
-    }
-
-    public Boolean getActive() {
-        return isActive;
-    }
-
-    public void setActive(Boolean active) {
-        isActive = active;
-    }
-
-    public String getPosition() {
-        return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
+    @ManyToOne(fetch = FetchType.LAZY)
+    private ProfessionDTO professionDTO;
 
 
-    public Date getAvailableFrom() {
-        return availableFrom;
-    }
-
-    public void setAvailableFrom(Date availableFrom) {
-        this.availableFrom = availableFrom;
-    }
-
-
-    public Date getRegistrationDate() {
-        return registrationDate;
-    }
-
-    public void setRegistrationDate(Date registrationDate) {
-        this.registrationDate = registrationDate;
-    }
 
 }
